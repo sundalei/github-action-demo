@@ -4,10 +4,28 @@ on:
   push:
     branches:
       - main
-  schedule:
-    - cron: "*/15 * * * *"
 
   workflow_dispatch:
+    inputs:
+      homedrive:
+        description: "The home drive on the machine"
+        required: true
+      logLevel:
+        description: "Log level"
+        default: "warning"
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
+      tag:
+        description: "Apply tag after successful test run"
+        required: true
+        type: boolean
+      environment:
+        description: "Environment to run tests against"
+        required: true
+        type: environment
 
 jobs:
   MyFirstJob:
