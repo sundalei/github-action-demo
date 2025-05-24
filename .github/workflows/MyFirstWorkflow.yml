@@ -58,3 +58,8 @@ jobs:
         run: |
           echo "The repository ${{ github.repository }} contains the following files:"
           tree
+
+  job_1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: "echo Job: ${{ github}}"
