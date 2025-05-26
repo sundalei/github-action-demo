@@ -35,8 +35,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Greet someone
-        uses: ./action
 
       - run: |
           echo "Home drive: ${{ inputs.homedrive }}"
@@ -54,6 +52,9 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v4.2.2
+
+      - name: Greet someone
+        uses: ./action
 
       - name: List files in the repository
         run: |
