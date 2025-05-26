@@ -35,7 +35,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "👋 Hello World!"
+      - name: Greet someone
+        uses: ./action
 
       - run: |
           echo "Home drive: ${{ inputs.homedrive }}"

@@ -1,0 +1,5 @@
+name: 'Hello World JS'
+description: 'Greet someone'
+runs:
+  using: 'node20'
+  main: 'index.js'
