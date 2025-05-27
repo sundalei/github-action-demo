@@ -54,7 +54,9 @@ jobs:
         uses: actions/checkout@v4.2.2
 
       - name: Greet someone
-        uses: ./   # action.yml in root of the repository
+        uses: ./
+        with:
+          who-to-greet: ${{ github.actor }}  # action.yml in root of the repository
 
       - name: List files in the repository
         run: |
