@@ -66,6 +66,13 @@ jobs:
           echo "The repository ${{ github.repository }} contains the following files:"
           tree
 
+  deploy:
+    if: ${{ github.ref == 'refs/heads/main'}}
+    runs-on: ubuntu-latest
+    needs: MyFirstJob
+    steps:
+      - run: "echo Deploying branch ${{ github.ref }}"
+
   job_1:
     runs-on: ubuntu-latest
     steps:
