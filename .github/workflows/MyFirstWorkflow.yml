@@ -50,6 +50,9 @@ jobs:
         name: Payload
         if: ${{ github.event_name == 'repository_dispatch' }}
 
+      - name: Print commit sha
+        run: "echo Commit SHA: ${{ github.sha}}"
+
       - name: Checkout
         uses: actions/checkout@v4.2.2
 
