@@ -95,3 +95,12 @@ jobs:
     needs: [job_2, job_3]
     steps:
       - run: "echo Job: ${{ github.job}}"
+
+  generate-a-secret-output:
+    runs-on: ubuntu-latest
+    steps:
+      - id: sets-a-secret
+        name: Generate, mask, and output a secret
+        run: |
+          the_secret=$((RANDOM))
+          echo $the_secret
