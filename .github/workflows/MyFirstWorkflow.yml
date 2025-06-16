@@ -109,3 +109,15 @@ jobs:
       - name: Use that secret output (protected by a mask)
         run: |
           echo "the secret number is ${{ steps.sets-a-secret.outputs.secret-number }}"
+
+  generate-a-environment-output:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set the value
+        id: step_one
+        run: |
+          echo "action_state=yellow" >> "$GITHUB_ENV"
+
+      - name: Use the value
+        run: |
+          echo "The action state is ${{ env.action_state }}"
