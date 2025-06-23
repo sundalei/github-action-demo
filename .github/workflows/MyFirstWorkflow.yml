@@ -121,3 +121,10 @@ jobs:
       - name: Use the value
         run: |
           echo "The action state is ${{ env.action_state }}"
+  
+  generate-a-job-summary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set the job summary
+        run: |
+          echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
