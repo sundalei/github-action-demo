@@ -1,5 +1,6 @@
 name: PR Labeller
-on: [ pull_request_target ]
+on:
+  pull_request_target
 
 jobs:
   label:
