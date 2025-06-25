@@ -1,0 +1,10 @@
+name: PR Labeller
+on: [ pull_request_target ]
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Demo PR Labeller
+        run: |
+          echo "This is a demo PR labeller workflow."
