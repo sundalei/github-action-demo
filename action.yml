@@ -1,4 +1,4 @@
-name: 'Hello World JS'
+name: 'Hello World'
 description: 'Greet someone'
 inputs:
   who-to-greet:
@@ -6,8 +6,11 @@ inputs:
     required: true
     default: 'World'
 outputs:
-  time:
-    description: 'The time of the greeting'
+  random-number:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-id }}
 runs:
-  using: 'node20'
-  main: 'index.js'
+  using: "composite"
+  steps:
+    - run: echo "Hello ${{ inputs.who-to-greet }}."
+      shell: bash
